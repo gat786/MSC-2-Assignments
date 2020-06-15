@@ -21,16 +21,52 @@ Answers.
 ## Write a short note on History of Operating System.
 Answer 1)
  
-There are a few generations of computers that have led to the modern day computing systems. I have tried to list them below in a comprehensive list describing what each generation did and what major changes it brought in the computing era.
+There are a few generations of computers that have led to the modern day 
+computing systems. I have tried to list them below in a comprehensive list 
+describing what each generation did and what major changes it brought in 
+the computing era.
 
 1. **The First Generation (1940's to early 1950's)**
-When electronic computers where first introduced in the 1940's they were created without any operating systems. All programming was done in absolute machine language, often by wiring up plugboards to control the machine's basic functions.During this generation computers were generally used to solve simple math calculations, operating systems were not necessarily needed.
+When electronic computers where first introduced in the 1940's they were 
+created without any operating systems. All programming was done in absolute 
+machine language, often by wiring up plugboards to control the machine's basic 
+functions.During this generation computers were generally used to solve simple 
+math calculations, operating systems were not necessarily needed.
+
 2. **The Second Generation (1955-1965)**
-The first operating system was introduced in the early 1950's, it was called GMOS and was created by General Motors for IBM's machine the 701. Operating systems in the 1950's were called single-stream batch processing systems because the data was submitted in groups. These new machines were called mainframes, and they were used by professional operators in large computer rooms. Since there was such as high price tag on these machines, only government agencies or large corporations were able to afford them.
+The first operating system was introduced in the early 1950's, it was 
+called GMOS and was created by General Motors for IBM's machine the 701. 
+Operating systems in the 1950's were called single-stream batch processing 
+systems because the data was submitted in groups. These new machines were called 
+mainframes, and they were used by professional operators in large computer rooms. 
+Since there was such as high price tag on these machines, only government 
+agencies or large corporations were able to afford them.
+
 3. **The Third Generation (1965-1980)**
 By the late 1960's operating systems designers were able to develop the system of multiprogramming in which a computer program will be able to perform multiple jobs at the same time.The introduction of multiprogramming was a major part in the development of operating systems because it allowed a CPU to be busy nearly 100 percent of the time that it was in operation. Another major development during the third generation was the phenomenal growth of minicomputers, starting with the DEC PDP-1 in 1961. The PDP-1 had only 4K of 18-bit words, but at $120,000 per machine (less than 5 percent of the price of a 7094), it sold like hotcakes. These microcomputers help create a whole new industry and the development of more PDP's. These PDP's helped lead to the creation of personal computers which are created in the fourth generation.
 4. **The Fourth Generation (1980-Present Day)**
-The fourth generation of operating systems saw the creation of personal computing. Although these computers were very similar to the minicomputers developed in the third generation, personal computers cost a very small fraction of what minicomputers cost. A personal computer was so affordable that it made it possible for a single individual could be able to own one for personal use while minicomputers where still at such a high price that only corporations could afford to have them. One of the major factors in the creation of personal computing was the birth of Microsoft and the Windows operating system. The windows Operating System was created in 1975 when Paul Allen and Bill Gates had a vision to take personal computing to the next level. They introduced the MS-DOS in 1981 although it was effective it created much difficulty for people who tried to understand its cryptic commands. Windows went on to become the largest operating system used in techonology today with releases of Windows 95, Windows 98, WIndows XP (Which is currently the most used operating system to this day), and their newest operating system Windows 7. Along with Microsoft, Apple is the other major operating system created in the 1980's. Steve Jobs, co founder of Apple, created the Apple Macintosh which was a huge success due to the fact that it was so user friendly. Windows development throughout the later years were influenced by the Macintosh and it created a strong competition between the two companies. Today all of our electronic devices run off of operating systems, from our computers and smartphones, to ATM machines and motor vehicles. And as technology advances, so do operating systems.
+The fourth generation of operating systems saw the creation of personal computing. 
+Although these computers were very similar to the minicomputers developed 
+in the third generation, personal computers cost a very small fraction of what 
+minicomputers cost. A personal computer was so affordable that it made it 
+possible for a single individual could be able to own one for personal use 
+while minicomputers where still at such a high price that only corporations 
+could afford to have them. One of the major factors in the creation of personal 
+computing was the birth of Microsoft and the Windows operating system. 
+The windows Operating System was created in 1975 when Paul Allen and Bill 
+Gates had a vision to take personal computing to the next level. They introduced 
+the MS-DOS in 1981 although it was effective it created much difficulty for people 
+who tried to understand its cryptic commands. Windows went on to become the 
+largest operating system used in techonology today with releases of Windows 
+95, Windows 98, WIndows XP (Which is currently the most used operating system to 
+this day), and their newest operating system Windows 7. Along with Microsoft, 
+Apple is the other major operating system created in the 1980's. Steve Jobs, 
+co founder of Apple, created the Apple Macintosh which was a huge success due to 
+the fact that it was so user friendly. Windows development throughout the 
+later years were influenced by the Macintosh and it created a strong competition 
+between the two companies. Today all of our electronic devices run off of 
+operating systems, from our computers and smartphones, to ATM machines and 
+motor vehicles. And as technology advances, so do operating systems.
 
 
  ## Write a short note on steps involve in making a system call.
@@ -149,3 +185,72 @@ executed or compiled.
 	6. The resulting RR schedule is as follows:
    
    ![Round robin scheduling time frame](images/rr-scheduling.png)
+
+	* Priority Scheduling
+
+	1.	Apriority is associated with each process, and the CPU is allocated to the process with the highest priority. 
+	2.	Equal-priority processes are scheduled in FCFS order.
+	3.	As an example, consider the following set of processes, assumed 
+	to have arrived at time 0 in the order P1, P2, · · ·, P5, with the length 
+	of the CPU burst given in milliseconds:
+	![Priority Scheduling Table](images/priority-scheduling-table.png)
+
+	Gantt Chart for the following table : -
+	![Gantt chart for priority scheduling](images/priority-scheduling-chart.png)
+
+	ii.	The average waiting time is 8.2 milliseconds.
+4.	Priorities can be defined either internally or externally. 
+	1. Internally defined priorities use some measurable quantity or quantities 
+   to compute the priority of a process. For example, time limits, memory 
+	requirements, the number of open files, and the ratio of average I/O burst 
+	to average CPU burst have been used in computing priorities. 
+	2. External priorities are set by criteria outside the operating system, such as the importance of the process, the type and amount of funds being paid for computer use, the department sponsoring the work, and other, often political, factors.
+5.	Priority scheduling can be either pre-emptive or non-pre-emptive. 
+	1. When a process arrives at the ready queue, its priority is compared with the priority of the currently running process. 
+	2. A pre-emptive priority scheduling algorithm will pre-empt the CPU if the priority of the newly arrived process is higher than the priority of the currently running process. 
+	3. A non-pre-emptive priority scheduling algorithm will simply put the new process at the head of the ready queue.
+6.	A major problem with priority scheduling algorithms is indefinite blocking, or starvation:
+	1. A process that is ready to run but waiting for the CPU can be considered blocked. 
+	2. A priority scheduling algorithm can leave some low priority processes waiting indefinitely. 
+	3. In a heavily loaded computer system, a steady stream of higher-priority processes can prevent a low-priority process from ever getting the CPU.
+7.	Generally, one of two things will happen:
+	1. The process will eventually be run.
+	2. The computer system will eventually crash and lose all unfinished low-priority processes.
+
+### First-come, first-served
+Ans.:
+1.	With this scheme, the process that requests the CPU first is allocated the CPU first. 
+2.	The implementation of the FCFS policy is easily managed with a FIFO queue. 
+3.	When a process enters the ready queue, its PCB is linked onto the tail of the queue. 
+4.	When the CPU is free, it is allocated to the process at the head of the queue. 
+5.	The running process is then removed from the queue. 
+6.	The code for FCFS scheduling is simple to write and understand.
+7.	On the negative side, the average waiting time under the FCFS policy is often quite long. 
+8.	Consider the following set of processes that arrive at time 0, with the length of the CPU burst given in milliseconds:
+
+![First Come First Serve](/images/fcfs-scheduling-table.png)
+
+  1. If the processes arrive in the order P1, P2, P3, and are served in FCFS order, 
+  we get the result shown in the following Gantt chart, which is a bar chart 
+  that illustrates a particular schedule, including the start and finish times 
+  of each of the participating processes:
+
+   ![fcfs gantt 1st](images/fcfs-gantt.png)
+
+  2. The waiting time is 0 milliseconds for process P1, 24 milliseconds for 
+  process P2, and 27 milliseconds for process P3. Thus, the average waiting 
+  time is (0+ 24 + 27)/3 = 17 milliseconds. If the processes arrive in the order 
+  P2, P3, P1, however, the results will be as shown in the following Gantt chart:
+
+   ![fcfs second gantt chart](images/fcfs-gantt-2.png)
+
+  3. The average waiting time is now (6 + 0 + 3)/3 = 3 milliseconds. 
+
+### Shortest Job First 
+
+1.	This algorithm associates with each process the length of the process’s next CPU burst. 
+2.	When the CPU is available, it is assigned to the processes are the same, FCFS scheduling is used to break the tie. 
+3.	Note that amore appropriate term for this scheduling method would be the shortest-next-CPU-burst algorithm, because scheduling depends on the length of the next CPU burst of a process, rather than its total length. 
+4.	We use the term SJF because most people and textbooks use this term to refer to this type of scheduling.
+5.	As an example of SJF scheduling, consider the following set of processes, with the length of the CPU burst given in milliseconds:
+
