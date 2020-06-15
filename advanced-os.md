@@ -252,5 +252,88 @@ Ans.:
 2.	When the CPU is available, it is assigned to the processes are the same, FCFS scheduling is used to break the tie. 
 3.	Note that amore appropriate term for this scheduling method would be the shortest-next-CPU-burst algorithm, because scheduling depends on the length of the next CPU burst of a process, rather than its total length. 
 4.	We use the term SJF because most people and textbooks use this term to refer to this type of scheduling.
-5.	As an example of SJF scheduling, consider the following set of processes, with the length of the CPU burst given in milliseconds:
 
+![Shortest Job First Table](images/sjf-table.png)
+
+5.	As an example of SJF scheduling, consider the following set of processes, with the length of the CPU burst given in milliseconds:
+	1. Using SJF scheduling, we would schedule these processes according to the following Gantt chart:
+	2. The waiting time is 3 milliseconds for process P1, 16 milliseconds for process P2, 9 milliseconds for process P3, and 0 milliseconds for process P4. 
+	3. Thus, the average waiting time is (3 + 16 + 9 + 0)/4 = 7 milliseconds.
+	4. By comparison, if we were using the FCFS scheduling scheme, the average waiting time would be 10.25 milliseconds.
+
+![Shortest Job First Gantt Chart](images/sjf-gantt.png)
+
+6.	The SJF scheduling algorithm is provably optimal, in that it gives the minimum average waiting time for a given set of processes.
+7.	Although the SJF algorithm is optimal, it cannot be implemented at the level of short-term CPU scheduling. 
+8.	With short-term scheduling, there is no way to know the length of the next CPU burst. 
+9.	One approach to this problem is to try to approximate SJF scheduling.
+10.	We may not know the length of the next CPU burst, but we may be able to predict its value. 
+11.	We expect that the next CPU burst will be similar in length to the previous ones. 
+12.	By computing an approximation of the length of the next CPU burst, we can pick the process with the shortest predicted CPU burst.
+
+## Short note on process and thread. 
+## What is the fundamental difference between a process and a thread?
+
+* Definition of a Process
+  
+  The process is the execution of a program and performs the relevant actions 
+  specified in a program, or it is an execution unit where a program runs. The 
+  operating system creates, schedules and terminates the processes for the 
+  use of the CPU. The other processes created by the main process are known 
+  as child process.
+
+  A process operations are controlled with the help of PCB(Process control Block) 
+  can be considered as the brain of the process, which contains all the crucial 
+  information regarding to a process such as a process id, priority, state, PWS 
+  and contents CPU register.
+
+* Definition of a Thread
+  
+  The thread is a program execution that uses process resources for accomplishing 
+  the task. All threads within a single program are logically contained within 
+  a process. The kernel allocates a stack and a thread control block (TCB) to 
+  each thread. The operating system saves only the stack pointer and CPU state 
+  at the time of switching between the threads of the same process.
+
+  Threads are implemented in three different ways; these are kernel-level threads, 
+  user-level threads, hybrid threads. Threads can have three states running, ready 
+  and blocked; it only 
+  includes computational state not resource allocation and communication state 
+  which reduces the switching overhead. It enhances the concurrency (parallelism) 
+  hence speed also increases.
+
+![Process versus thread](images/process-vs-thread.png)
+
+7. Short note on process table.
+   
+   Answer.
+
+   The process table is a data structure maintained by the operating system 
+   to facilitate context switching and scheduling, and other activities discussed 
+   later. Each entry in the table, often called a context block, contains 
+   information about a process such as process name and state (discussed 
+   below), priority (discussed below), registers, and a semaphore it may be 
+   waiting on (discussed later). The exact contents of a context block depends 
+   on the operating system. For instance, if the OS supports paging, then the 
+   context block contains an entry to the page table.
+   
+   In Xinu, the index of a process table entry associated with a process serves 
+   to identify the process, and is known as the process id of the process.
+
+8. Explain what is block device and character device. Distinguish between
+them.
+
+1.	Block devices:
+	1. Block devices include all devices that allow random access to completely independent, fixed-sized blocks of data, including hard disks and floppy disks, CD-ROMs and Blu-ray discs, and flash memory. 
+	2. Block devices are typically so that programs can create and repair the file system that the device contains. 
+	3. For example, a database application may prefer to perform its own fine-tuned layout of data onto a disk rather than using the general-purpose file system.
+	4. In the context of block devices, a block represents the unit with which the kernel performs I /O.
+	5. When a request is accepted for processing by a block device driver, it is not removed from the list. It is removed only after the I/O is complete.
+	6. The request manager is the layer of software that manages the reading and writing of buffer contents to and from a block-device driver.
+2.	Character devices:
+	1.	The fundamental difference between block and character devices is random access—block devices are accessed randomly, while character devices are accessed serially.
+	2.	Character devices include most other devices, such as mice and keyboards.
+	3.	For example, seeking to a certain position in a file might be supported for a DVD but makes no sense for a pointing device such as a mouse.
+	4.	The kernel performs almost no pre-processing of a file read or write request to a character device. 
+	5.	It simply passes the request to the device in question and lets the device deal with the request.
+	6.	A line discipline is an interpreter for the information from the terminal device.
