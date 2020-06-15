@@ -137,4 +137,15 @@ executed or compiled.
      2. If the CPU burst of the currently running process is longer than 1 time quantum, the timer will go off and will cause an interrupt to the operating system: A context switch will be executed, and the process will be put at the tail of the ready queue. 
      3. The CPU scheduler will then select the next process in the ready queue.
   10. The average waiting time under the RR policy is often long. 
+  11. Consider the following set of processes that arrive at time 0, with the length of the CPU burst given in milliseconds:
    
+   ![Round robin burst time](images/burst-time-rr.png)
+
+	1. If we use a time quantum of 4 milliseconds, then process P1 gets the first 4 milliseconds. 
+	2. Since it requires another 20 milliseconds, it is preempted after the first time quantum, and the CPU is given to the next process in the queue, process P2. 
+	3. Process P2 does not need 4 milliseconds, so it quits before its time quantum expires. 
+	4. The CPU is then given to the next process, process P3. 
+	5. Once each process has received 1 time quantum, the CPU is returned to process P1 for an additional time quantum. 
+	6. The resulting RR schedule is as follows:
+   
+   ![Round robin scheduling time frame](images/rr-scheduling.png)
