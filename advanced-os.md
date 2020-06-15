@@ -37,7 +37,7 @@ The fourth generation of operating systems saw the creation of personal computin
 
 Answer 2)
 
-![steps involved in making a system call](images/system-calls.jpg)
+![steps involved in making a system call](./images/system-calls.jpg)
 
 ### 11 steps involved in making a system call
 
@@ -54,3 +54,87 @@ Answer 2)
 ## Short note on Exokernal and client server model.
 
 Answer)
+
+Exokernel is an operating system kernel developed by the MIT Parallel and 
+Distributed Operating Systems group, and also a class of similar operating systems.
+
+Operating systems generally present hardware resources to applications through 
+high-level abstractions such as (virtual) file systems. The idea behind 
+exokernels is to force as few abstractions as possible on application developers, 
+enabling them to make as many decisions as possible about hardware abstractions. 
+Exokernels are tiny, since functionality is limited to ensuring protection and 
+multiplexing of resources, which is considerably simpler than conventional 
+microkernels' implementation of message passing and monolithic kernels' 
+implementation of high-level abstractions.
+
+Implemented applications are called library operating systems; they may request 
+specific memory addresses, disk blocks, etc. The kernel only ensures that the 
+requested resource is free, and the application is allowed to access it. This 
+low-level hardware access allows the programmer to implement custom abstractions, 
+and omit unnecessary ones, most commonly to improve a program's performance. 
+It also allows programmers to choose what level of abstraction they want, 
+high, or low.
+
+Exokernels can be seen as an application of the end-to-end principle to operating
+systems, in that they do not force an application program to layer its
+abstractions on top of other abstractions that were designed with different 
+requirements in mind. For example, in the MIT Exokernel project, the Cheetah 
+web server stores preformatted Internet Protocol packets on the disk, the kernel 
+provides safe access to the disk by preventing unauthorized reading and writing, 
+but how the disk is abstracted is up to the application or the libraries the application uses.
+
+### Client / Server Architecture
+
+1.	The client–server relationship is common with networked machines. 
+2.	Remote file systems allow a computer to mount one or more file systems from one or more remote machines. 
+3.	In this case, the machine containing the files is the server, and the machine seeking access to the files is the client. 
+4.	Generally, the server declares that a resource is available to clients and specifies exactly which resource (in this case, which files) and exactly which clients.
+5.	A server can serve multiple clients, and a client can use multiple servers, depending on the implementation details of a given client–server facility. 
+6.	The server usually specifies the available files on a volume or directory level. 
+7.	Client identification is more difficult. 
+8.	A client can be specified by a network name or other identifier, such as an IP address, but these can be spoofed, or imitated. As a result of spoofing, an unauthorized client could be allowed access to the server. 
+9.	More secure solutions include secure authentication of the client via encrypted keys. Unfortunately, with security come many challenges, including ensuring compatibility of the client and server (they must use the same encryption algorithms) and security of key exchanges (intercepted keys could again allow unauthorized access).
+
+
+## What is Monolithic System
+
+![Monolithic Kernel](images/monolithic-kernel.png)
+
+A monolithic kernel is an operating system architecture where the entire 
+operating system is working in kernel space. The monolithic model differs from 
+other operating system architectures (such as the microkernel architecture) 
+in that it alone defines a high-level virtual interface over computer hardware. 
+A set of primitives or system calls implement all operating system services such 
+as process management, concurrency, and memory management. Device drivers can be 
+added to the kernel as modules.
+
+A monolithic architecture is the traditional unified model for the design of a software program.
+
+monolithic, in this context, means composed all in one piece. Monolithic 
+software is designed to be self-contained; components of the program are 
+interconnected and interdependent rather than loosely coupled as is the case 
+with modular software programs. In a tightly-coupled architecture, each 
+component and its associated components must be present in order for code to be 
+executed or compiled.
+
+## Write a short note on Scheduling. Explain
+* Round robin.
+* Priority scheduling.
+* First-come, first-served.
+* Shortest job first.
+
+* Round Robin
+  1.	The round-robin (RR) scheduling algorithm is designed especially for timesharing systems.
+  2.	It is similar to FCFS scheduling, but preemption is added to enable the system to switch between processes.
+  3.	A small unit of time, called a time quantum or time slice, is defined.
+  4.	A time quantum is generally from 10 to 100 milliseconds in length. The ready queue is treated as a circular queue.
+  5.	The CPU scheduler goes around the ready queue, allocating the CPU to each process for a time interval of up to 1 time quantum.
+  6.	To implement RR scheduling, we again treat the ready queue as a FIFO queue of processes. 
+  7.	New processes are added to the tail of the ready queue.
+  8.	The CPU scheduler picks the first process from the ready queue, sets a timer to interrupt after 1 time quantum, and dispatches the process.
+  9. One of two things will then happen:
+     1. The process may have a CPU burst of less than 1 time quantum: In this case, the process itself will release the CPU voluntarily. The scheduler will then proceed to the next process in the ready queue. 
+     2. If the CPU burst of the currently running process is longer than 1 time quantum, the timer will go off and will cause an interrupt to the operating system: A context switch will be executed, and the process will be put at the tail of the ready queue. 
+     3. The CPU scheduler will then select the next process in the ready queue.
+  10. The average waiting time under the RR policy is often long. 
+   
