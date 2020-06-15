@@ -35,8 +35,7 @@ The fourth generation of operating systems saw the creation of personal computin
 
  ## Write a short note on steps involve in making a system call.
 Answer 2)
-
-
+![enter image description here](https://photos.google.com/photo/AF1QipOgqUTX6yvIKSLwPDAIAlLQ4qsV9edEqcG22UPw)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MTc4NDQ3N119
+eyJoaXN0b3J5IjpbLTkxMzIwODk2N119
 -->
