@@ -39,5 +39,8 @@ The fourth generation of operating systems saw the creation of personal computin
 </ol>
 <h2 id="write-a-short-note-on-steps-involve-in-making-a-system-call.">Write a short note on steps involve in making a system call.</h2>
 <p>Answer 2)<br>
-![steps involved in making a system call](<a href="https://res.cloudinary.com/dtldj8hpa/image/upload/v1592203652/1.jpg">https://res.cloudinary.com/dtldj8hpa/image/upload/v1592203652/1.jpg</a></p>
+![steps involved in making a system call](<a href="https://res.cloudinary.com/dtldj8hpa/image/upload/v1592203652/1.jpg">https://res.cloudinary.com/dtldj8hpa/image/upload/v1592203652/1.jpg</a>p>Answer 2)</p>
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTkyMjAzNzg2MV19
+-->
