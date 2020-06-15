@@ -320,8 +320,7 @@ Ans.:
    In Xinu, the index of a process table entry associated with a process serves 
    to identify the process, and is known as the process id of the process.
 
-8. Explain what is block device and character device. Distinguish between
-them.
+## Explain what is block device and character device. Distinguish between them.
 
 1.	Block devices:
 	1. Block devices include all devices that allow random access to completely independent, fixed-sized blocks of data, including hard disks and floppy disks, CD-ROMs and Blu-ray discs, and flash memory. 
