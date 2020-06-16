@@ -10,3 +10,4 @@ The following links will take you to different pages of the assignments. Forgive
 
 1. [Advanced Operating Systems](advanced-os.md)
 2. [Business Intelligence and Big Data Analytics](bibda.md)
+3. [Cloud Computing](cloud-computing.md)
